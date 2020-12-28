@@ -3,7 +3,7 @@ module.exports = {
     title: 'Overengineered',
     author: 'Omer Gulen',
     description:
-      'Personal blog by Omer Gulen. I mostly explain things that I invest time.',
+      'Personal blog by Omer Gulen. I try to explain things that I enjoy and invest time.',
     siteUrl: 'https://omergulen.com',
     social: {
       twitter: '@omergulenn',
