@@ -7,7 +7,7 @@ cta: 'syscall'
 
 In my previous blog post 👇
 
-[How to add system call (syscall) to the kernel, compile and test it?](https://overengineered.pro/how-to-add-system-call-syscall-to-the-kernel-compile-and-test-it/)
+[How to add system call (syscall) to the kernel, compile and test it?](/how-to-add-system-call-syscall-to-the-kernel-compile-and-test-it/)
 
 I described how to add syscall to the kernel, compile it and test it in detail. As promised, I now would like to describe how to create a syscall that prints out the elapsed time of a process with a given process id(PID).
 
@@ -125,7 +125,7 @@ Find the line with the `core-y`, it should be similar to this:
 core-y		+= kernel/ certs/ mm/ fs/ ipc/ security/ crypto/ block/ hello/
 ```
 
-`hello/` is the folder from [my previous blog post](https://overengineered.pro/how-to-add-system-call-syscall-to-the-kernel-compile-and-test-it).
+`hello/` is the folder from [my previous blog post](https://overengineered.pro/how-to-add-system-call-syscall-to-the-kernel-compile-and-test-it/).
 
 I've added my new folder `petime` to the end of this line. Result should be looking like this:
 ```

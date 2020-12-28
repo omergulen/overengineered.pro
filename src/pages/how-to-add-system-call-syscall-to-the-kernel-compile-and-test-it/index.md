@@ -9,7 +9,7 @@ _One of my example `syscall` methods will print `Hello world` to the kernel buff
 
 The second one gets PID of a process and prints the `elapsed time` of it to the kernel buffer in my other blog post:
 
-[How to add system call (syscall) that prints elapsed time of a process with given PID to the kernel and test it?](https://overengineered.pro/how-to-add-system-call-syscall-that-prints-elapsed-time-of-a-process-with-given-pid-to-the-kernel-and-test-it/)
+[How to add system call (syscall) that prints elapsed time of a process with given PID to the kernel and test it?](/how-to-add-system-call-syscall-that-prints-elapsed-time-of-a-process-with-given-pid-to-the-kernel-and-test-it/)
 
 
 ## 1. Setup environment
