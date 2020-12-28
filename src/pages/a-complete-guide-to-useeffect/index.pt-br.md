@@ -58,7 +58,7 @@ Isso pode acontecer se você estiver buscando dados em um efeito sem o segundo a
 
 **🤔 Pergunta: Por que às vezes recebo um *state* ou *props* antiga dentro do meu efeito?**
 
-Os efeitos sempre podem "ver" as *props* e *state* da renderização em que foram definidos. [Isso ajuda a evitar erros](https://overreacted.io/how-are-function-components-different-from-classes/), mas em alguns casos pode ser irritante. Para esses casos, você pode manter, explicitamente, algum valor em uma _ref_ mutável (o artigo do link explica isso no final). Se você acha que está vendo *props* ou *state* a de uma renderização antiga, mas não é o que você espera, você provavelmente deixou passar alguma dependência. Tente usar a [regra do linter](https://github.com/facebook/react/issues/14920) para te treinar a exergá-los. Depois de alguns dias, será como uma segunda natureza para você. Veja também [essa reposta](https://reactjs.org/docs/hooks-faq.html#why-am-i-seeing-stale-props-or-state-inside-my-function) no nosso FAQ.
+Os efeitos sempre podem "ver" as *props* e *state* da renderização em que foram definidos. [Isso ajuda a evitar erros](https://overengineered.pro/how-are-function-components-different-from-classes/), mas em alguns casos pode ser irritante. Para esses casos, você pode manter, explicitamente, algum valor em uma _ref_ mutável (o artigo do link explica isso no final). Se você acha que está vendo *props* ou *state* a de uma renderização antiga, mas não é o que você espera, você provavelmente deixou passar alguma dependência. Tente usar a [regra do linter](https://github.com/facebook/react/issues/14920) para te treinar a exergá-los. Depois de alguns dias, será como uma segunda natureza para você. Veja também [essa reposta](https://reactjs.org/docs/hooks-faq.html#why-am-i-seeing-stale-props-or-state-inside-my-function) no nosso FAQ.
 
 ---
 
@@ -87,7 +87,7 @@ function Counter() {
 }
 ```
 
-O que isso significa? Será que `count`, de alguma forma, "fica olhando" as alterações ao nosso estado e atualiza automaticamente? Essa pode ser uma primeira intuição quando você aprende React, mas não é um [modelo mental preciso](https://overreacted.io/react-as-a-ui-runtime/).
+O que isso significa? Será que `count`, de alguma forma, "fica olhando" as alterações ao nosso estado e atualiza automaticamente? Essa pode ser uma primeira intuição quando você aprende React, mas não é um [modelo mental preciso](https://overengineered.pro/react-as-a-ui-runtime/).
 
 Neste exemplo, `count` é apenas um número. Não é uma mágica de "ligação de dados" (**data binding**), um "observador" (**watcher**), um "proxy" ou qualquer outra coisa. É um bom e antigo número como este:
 
@@ -138,7 +138,7 @@ Portanto, essa linha não faz nenhuma ligação de dados especial:
 
 A principal conclusão é que a constante `count`, em qualquer renderização, não muda com o tempo. É nosso componente que é chamado novamente e cada renderização "vê" seu próprio valor de contagem isolado entre renderizações.
 
-*(Para uma visão detalhada desse processo, confira meu post [React as a UI Runtime](https://overreacted.io/react-as-a-ui-runtime/).)*
+*(Para uma visão detalhada desse processo, confira meu post [React as a UI Runtime](https://overengineered.pro/react-as-a-ui-runtime/).)*
 
 ## Cada renderização tem seus próprios manipuladores de eventos
 
@@ -188,7 +188,7 @@ O que você espera que o alerta mostre? Você espera que seja 5 - que é o estad
 
 Vá em frente e [tente você mesmo!](https://codesandbox.io/s/w2wxl3yo0l)
 
-Se o comportamento não fizer muito sentido para você, imagine um exemplo mais prático: um aplicativo de bate-papo com o ID do destinatário atual no estado e um botão Enviar. [Este artigo](https://overreacted.io/how-are-function-components-different-from-classes/) explora as razões em profundidade, mas a resposta correta é 3.
+Se o comportamento não fizer muito sentido para você, imagine um exemplo mais prático: um aplicativo de bate-papo com o ID do destinatário atual no estado e um botão Enviar. [Este artigo](https://overengineered.pro/how-are-function-components-different-from-classes/) explora as razões em profundidade, mas a resposta correta é 3.
 
 O alerta irá "capturar" o estado no momento em que eu cliquei no botão.
 
@@ -392,7 +392,7 @@ Mesmo se falarmos de um conceitual único _efeito_ aqui (atualizando o título d
 
 **Conceitualmente, você pode imaginar que os efeitos _fazem parte do resultado da renderização_.**
 
-Falando rigorosamente, eles não são (tudo isso para [permitir a composição do Hook](https://overreacted.io/why-do-hooks-rely-on-call-order/) sem uma sintaxe grotesca ou com alguma sobrecarga em tempo de execução). No modelo mental que estamos construindo, as funções de efeito pertencem a uma renderização específica, da mesma maneira que os manipuladores de eventos.
+Falando rigorosamente, eles não são (tudo isso para [permitir a composição do Hook](https://overengineered.pro/why-do-hooks-rely-on-call-order/) sem uma sintaxe grotesca ou com alguma sobrecarga em tempo de execução). No modelo mental que estamos construindo, as funções de efeito pertencem a uma renderização específica, da mesma maneira que os manipuladores de eventos.
 
 ---
 
@@ -513,7 +513,7 @@ function Example(props) {
 
 **Não importa se você lê as *props* ou as declara mais "cedo" dentro do seu componente.** Elas não vão mudar! Dentro do escopo de uma única renderização, as *props* e *state* permanecem as mesmas. (desestruturando as *props* tornam isso mais óbvio.)
 
-Naturalmente, às vezes você deseja ler o valor mais recente ao invés do que foi capturado, talvez em algum retorno de chamada definido em um efeito. A maneira mais fácil de fazer isso é usando refs, conforme descrito na última seção [deste artigo](https://overreacted.io/how-are-function-components-different-from-classes/).
+Naturalmente, às vezes você deseja ler o valor mais recente ao invés do que foi capturado, talvez em algum retorno de chamada definido em um efeito. A maneira mais fácil de fazer isso é usando refs, conforme descrito na última seção [deste artigo](https://overengineered.pro/how-are-function-components-different-from-classes/).
 
 Fique ciente de que quando você quiser ler as *props* futuras, ou *state* de uma função em uma renderização passada, você estará nadando contra a maré. Não é errado (e, em alguns casos, necessário), mas isso pode parecer menos "limpo", ao sair do paradigma. Essa é uma consequência intencional porque ajuda a destacar qual código é frágil e depende de um tempo específico. Nas **class**, é menos óbvio quando isso acontece.
 
@@ -623,7 +623,7 @@ Isso é o que permite que o React lide com os efeitos logo após a pintura - tor
 
 ## Sincronização, não Ciclos de Vida
 
-Uma das minhas coisas favoritas sobre o React é que ele unifica a descrição do resultado inicial da renderização e das atualizações. Isso [reduz a entropia do seu programa](https://overreacted.io/the-bug-o-notation/).
+Uma das minhas coisas favoritas sobre o React é que ele unifica a descrição do resultado inicial da renderização e das atualizações. Isso [reduz a entropia do seu programa](https://overengineered.pro/the-bug-o-notation/).
 
 Digamos que meu componente é o seguinte:
 
@@ -778,7 +778,7 @@ function SearchResults() {
 }
 ```
 
-*(O [FAQ dos Hooks explica](https://reactjs.org/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies) o que fazer ao invés do exemplo acima. [Voltaremos nesse exemplo](https://overreacted.io/a-complete-guide-to-useeffect/#moving-functions-inside-effects) mais para frente.)*
+*(O [FAQ dos Hooks explica](https://reactjs.org/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies) o que fazer ao invés do exemplo acima. [Voltaremos nesse exemplo](https://overengineered.pro/a-complete-guide-to-useeffect/#moving-functions-inside-effects) mais para frente.)*
 
 "Mas eu só quero executar isso ao montar o componente!", Você dirá. Por enquanto, lembre-se: se você especificar "deps", **todos os valores de dentro de seu componente que são usados ​​pelo efeito devem ser listados lá**. Incluindo *props*, *state*, funções - qualquer coisa no escopo do seu componente usado dentro do efeito.
 
@@ -989,7 +989,7 @@ Para fazer isso, precisamos nos perguntar: para que estamos utilizando `count`? 
 
 Eu gosto de pensar nesses casos como "falsas dependências". Sim, `count` foi uma dependência necessária porque escrevemos `setCount(count + 1)` dentro do efeito. No entando, nós só precisávamos de `count` para transformá-lo em `count + 1` e "enviar de volta" para o React. Mas o React *já conhece* o atual valor de `count`. **O que precisamos dizer ao React é que ele incremente o estado - qualquer que seja seu valor atual.**
 
-Isso é exatamente o que `setCount(c => c + 1)` faz. Você pode pensar nisso como "enviar uma instrução" para o React de como o estado deve mudar. Essa "forma funcional" também ajuda em outros casos, como quando você faz [atualizações em lotes](https://overreacted.io/react-as-a-ui-runtime/#batching).
+Isso é exatamente o que `setCount(c => c + 1)` faz. Você pode pensar nisso como "enviar uma instrução" para o React de como o estado deve mudar. Essa "forma funcional" também ajuda em outros casos, como quando você faz [atualizações em lotes](https://overengineered.pro/react-as-a-ui-runtime/#batching).
 
 **Perceba que nós realmente _fizemos o trabalho_ para remover a dependência. Nós não trapaceámos. Nosso efeito não lê mais o valor `count` do escopo de renderização:**
 
@@ -1560,7 +1560,7 @@ function ColorPicker() {
 
 **Eu quero enfatizar que colocar `useCallback` em todos os lugares não é ideal.** É uma ótima saída de emergência e é útil quando uma função é passada e chamada de dentro de um efeito em elementos filhos. Ou se você está tentando impedir a quebra de memoização de um componente filho. Mas Hooks fazem [um melhor serviço para evitar passar callbacks completamente](https://reactjs.org/docs/hooks-faq.html#how-to-avoid-passing-callbacks-down)
 
-Nos exemplos acima, eu gostaria que `fetchData` estivesse dentro do meu efeito (que por sua vez poderia ser extraído para um Hook personalizado) ou uma importação de nível superior. Eu quero manter os efeitos simples, e utilizar retornos de chamadas neles não ajudam. ("E se alguma `props.onComplete` for alterada enquando uma busca de dados estiver em andamento?") Você pode [simular o comportamento da classe](https://overreacted.io/a-complete-guide-to-useeffect/#swimming-against-the-tide), mas isso não resolve essa **condição de corrida** (*race conditions*).
+Nos exemplos acima, eu gostaria que `fetchData` estivesse dentro do meu efeito (que por sua vez poderia ser extraído para um Hook personalizado) ou uma importação de nível superior. Eu quero manter os efeitos simples, e utilizar retornos de chamadas neles não ajudam. ("E se alguma `props.onComplete` for alterada enquando uma busca de dados estiver em andamento?") Você pode [simular o comportamento da classe](https://overengineered.pro/a-complete-guide-to-useeffect/#swimming-against-the-tide), mas isso não resolve essa **condição de corrida** (*race conditions*).
 
 ## Falando em Condições de Corrida
 

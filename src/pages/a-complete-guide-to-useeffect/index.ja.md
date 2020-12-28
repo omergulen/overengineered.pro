@@ -85,7 +85,7 @@ function Counter() {
 }
 ```
 
-どういうことでしょう？ `count` は何とか props と state の変更を検知して自動的にアップデートされているのでしょうか？このメンタルモデルは React を学ぶ時の最初の直感としては役に立ちますが、実は[正しくありません](https://overreacted.io/react-as-a-ui-runtime/).
+どういうことでしょう？ `count` は何とか props と state の変更を検知して自動的にアップデートされているのでしょうか？このメンタルモデルは React を学ぶ時の最初の直感としては役に立ちますが、実は[正しくありません](https://overengineered.pro/react-as-a-ui-runtime/).
 
 **このサンプルでは、 `count` はただの数字です。** データバインディングやウォッチャーやプロキシなど手の込んだものではありません。古き良きただの数字です：
 
@@ -136,7 +136,7 @@ function Counter() {
 
 ここで覚えていて欲しいのは `count` 定数は特定の render で時間の経過と共に変化するのではないということです。何が起こってるかというと、コンポーネント関数が呼び出されているのです - そして各 render はそれぞれその render に隔離された `count`値を `見る` ことができるのです。
 
-_（このプロセスについてもっと深掘りしたい場合は[React as a UI Runtime](https://overreacted.io/react-as-a-ui-runtime/)を参照してください。）_
+_（このプロセスについてもっと深掘りしたい場合は[React as a UI Runtime](https://overengineered.pro/react-as-a-ui-runtime/)を参照してください。）_
 
 ## それぞれの render は独自のイベントハンドラを保持している
 
@@ -182,7 +182,7 @@ _この先ネタバレ_
 
 自分で一度[再現してみてください！](https://codesandbox.io/s/w2wxl3yo0l)
 
-もしこの挙動が意味をなさない場合は、もっと現実的な例を想像してみてください：受取人 ID を state に保持するチャットアプリと、送るボタンなど。[この記事](https://overreacted.io/how-are-function-components-different-from-classes/)が理由を深掘りしていますが正解は 3 です。
+もしこの挙動が意味をなさない場合は、もっと現実的な例を想像してみてください：受取人 ID を state に保持するチャットアプリと、送るボタンなど。[この記事](https://overengineered.pro/how-are-function-components-different-from-classes/)が理由を深掘りしていますが正解は 3 です。
 
 アラートは押下時の state をキャプチャーします。
 
@@ -505,7 +505,7 @@ function Example(props) {
 
 **props か state を「早めに」コンポーネント内で呼ぼうが呼ばまいが関係ありません。** なぜなら変わらないからです！一つの render 内のスコープでは、 props と state は変わりません。（分割代入するとさらに分かりやすいです。）
 
-ですが、特定の render 内の値ではなく最新の値をエフェクト内で定義されてる callback内で *使いたい* 場合もありますよね。これを成し遂げる一番簡単な方法は、この[記事](https://overreacted.io/how-are-function-components-different-from-classes/)の最後のセクションにも説明されてるように、 refs を使うことです。
+ですが、特定の render 内の値ではなく最新の値をエフェクト内で定義されてる callback内で *使いたい* 場合もありますよね。これを成し遂げる一番簡単な方法は、この[記事](https://overengineered.pro/how-are-function-components-different-from-classes/)の最後のセクションにも説明されてるように、 refs を使うことです。
 
 ですが、 *未来の* props や state を読みたいということは React の流れに逆らっているというのを用心してください。間違ってはいません（そして時々必要）が、パラダイムから抜け出すという意味であまり
 綺麗には見えないかもしれません。これは意図した仕様で、なぜかというとどのコードが脆く、タイミングに頼っているか洗い出しハイライトしてくれる役割を担っています。classes ではこの現象が起きてもあまり明らかにはされません。

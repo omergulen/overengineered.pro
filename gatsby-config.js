@@ -86,7 +86,7 @@ module.exports = {
               `;
 
                 let html = edge.node.html;
-                // Hacky workaround for https://github.com/gaearon/overreacted.io/issues/65
+                // Hacky workaround for https://github.com/gaearon/overengineered.pro/issues/65
                 html = html
                   .replace(/href="\//g, `href="${siteUrl}/`)
                   .replace(/src="\//g, `src="${siteUrl}/`)
@@ -135,7 +135,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-ebook`,
       options: {
-        filename: 'overreacted-ebook.epub',
+        filename: 'overengineered-ebook.epub',
         query: `
           {
             site {

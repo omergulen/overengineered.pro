@@ -90,7 +90,7 @@ function Counter() {
 }
 ```
 
-高亮的代码究竟是什么意思呢？`count` 会“监听”状态的变化并自动更新吗？这么想可能是学习React的时候有用的第一直觉，但它并不是[精确的心智模型](https://overreacted.io/react-as-a-ui-runtime/)。
+高亮的代码究竟是什么意思呢？`count` 会“监听”状态的变化并自动更新吗？这么想可能是学习React的时候有用的第一直觉，但它并不是[精确的心智模型](https://overengineered.pro/react-as-a-ui-runtime/)。
 
 **上面例子中，`count`仅是一个数字而已。**它不是神奇的“data binding”, “watcher”, “proxy”，或者其他任何东西。它就是一个普通的数字像下面这个一样：
 
@@ -141,7 +141,7 @@ function Counter() {
 
 这里关键的点在于任意一次渲染中的`count`常量都不会随着时间改变。渲染输出会变是因为我们的组件被一次次调用，而每一次调用引起的渲染中，它包含的`count`值独立于其他渲染。
 
-*（关于这个过程更深入的探讨可以查看我的另一篇文章 [React as a UI Runtime](https://overreacted.io/react-as-a-ui-runtime/)。）*
+*（关于这个过程更深入的探讨可以查看我的另一篇文章 [React as a UI Runtime](https://overengineered.pro/react-as-a-ui-runtime/)。）*
 
 
 ## 每一次渲染都有它自己的事件处理函数
@@ -193,7 +193,7 @@ function Counter() {
 来自己 [试试吧！](https://codesandbox.io/s/w2wxl3yo0l)
 
 如果结果和你预料不一样，你可以想象一个更实际的例子：一个聊天应用在state中保存了当前接收者的ID，以及一个发送按钮。
-[这篇文章](https://overreacted.io/how-are-function-components-different-from-classes)深入探索了个中缘由。正确的答案就是3。
+[这篇文章](https://overengineered.pro/how-are-function-components-different-from-classes)深入探索了个中缘由。正确的答案就是3。
 
 alert会“捕获”我点击按钮时候的状态。
 
@@ -398,7 +398,7 @@ React会记住你提供的effect函数，并且会在每次更改作用于DOM并
 
 **概念上，你可以想象effects是渲染结果的一部分。**
 
-严格地说，它们并不是（为了[允许Hook的组合](https://overreacted.io/why-do-hooks-rely-on-call-order/)并且不引入笨拙的语法或者运行时）。但是在我们构建的心智模型上，effect函数*属于*某个特定的渲染，就像事件处理函数一样。
+严格地说，它们并不是（为了[允许Hook的组合](https://overengineered.pro/why-do-hooks-rely-on-call-order/)并且不引入笨拙的语法或者运行时）。但是在我们构建的心智模型上，effect函数*属于*某个特定的渲染，就像事件处理函数一样。
 
 ---
 
@@ -522,7 +522,7 @@ function Example(props) {
 
 **在组件内什么时候去读取props或者state是无关紧要的。**因为它们不会改变。在单次渲染的范围内，props和state始终保持不变。（解构赋值的props使得这一点更明显。）
 
-当然，有时候你可能*想*在effect的回调函数里读取最新的值而不是捕获的值。最简单的实现方法是使用refs，[这篇文章](https://overreacted.io/how-are-function-components-different-from-classes/)的最后一部分介绍了相关内容。
+当然，有时候你可能*想*在effect的回调函数里读取最新的值而不是捕获的值。最简单的实现方法是使用refs，[这篇文章](https://overengineered.pro/how-are-function-components-different-from-classes/)的最后一部分介绍了相关内容。
 
 需要注意的是当你想要从*过去*渲染中的函数里读取*未来*的props和state，你是在逆潮而动。虽然它并没有*错*（有时候可能也需要这样做），但它因为打破了默认范式会使代码显得不够“干净”。这是我们有意为之的，因为它能帮助突出哪些代码是脆弱的，是需要依赖时间次序的。在class中，如果发生这种情况就没那么显而易见了。
 
@@ -632,7 +632,7 @@ function Example() {
 
 ## 同步， 而非生命周期
 
-我最喜欢React的一点是它统一描述了初始渲染和之后的更新。这降低了你程序的[熵](https://overreacted.io/the-bug-o-notation/)。
+我最喜欢React的一点是它统一描述了初始渲染和之后的更新。这降低了你程序的[熵](https://overengineered.pro/the-bug-o-notation/)。
 
 比如我有个组件像下面这样：
 

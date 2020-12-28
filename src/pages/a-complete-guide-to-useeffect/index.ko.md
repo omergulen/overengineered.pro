@@ -58,7 +58,7 @@ spoiler: 이펙트는 데이터 흐름의 한 부분입니다.
 
 🤔 **질문: 왜 가끔씩 이펙트 안에서 이전 state나 prop 값을 참조할까?**
 
-이펙트는 언제나 자신이 정의된 블록 안에서 랜더링이 일어날 때마다 prop과 state를 "지켜봅니다". 이렇게 하면 [버그를 방지할 수 있지만](https://overreacted.io/ko/how-are-function-components-different-from-classes/) 어떤 경우에는 짜증날 수 있습니다. 그럴 때는 명시적으로 어떤 값을 가변성 ref에 넣어서 관리할 수 있습니다(링크에 있는 글 말미에 설명되어 있습니다). 혹시 기대한 것과 달리 이전에 랜더링될 때의 prop이나 state가 보인다면, 아마도 의존성 배열에 값을 지정하는 것을 깜빡했을 겁니다. 이 [린트 규칙](https://github.com/facebook/react/issues/14920)을 사용하여 그 값을 파악할 수 있도록 연습해 보세요. 며칠 안으로 자연스레 몸에 밸 것입니다. 또한 FAQ 문서에서 [이 답변 부분을](https://reactjs.org/docs/hooks-faq.html#why-am-i-seeing-stale-props-or-state-inside-my-function) 읽어보세요.
+이펙트는 언제나 자신이 정의된 블록 안에서 랜더링이 일어날 때마다 prop과 state를 "지켜봅니다". 이렇게 하면 [버그를 방지할 수 있지만](https://overengineered.pro/ko/how-are-function-components-different-from-classes/) 어떤 경우에는 짜증날 수 있습니다. 그럴 때는 명시적으로 어떤 값을 가변성 ref에 넣어서 관리할 수 있습니다(링크에 있는 글 말미에 설명되어 있습니다). 혹시 기대한 것과 달리 이전에 랜더링될 때의 prop이나 state가 보인다면, 아마도 의존성 배열에 값을 지정하는 것을 깜빡했을 겁니다. 이 [린트 규칙](https://github.com/facebook/react/issues/14920)을 사용하여 그 값을 파악할 수 있도록 연습해 보세요. 며칠 안으로 자연스레 몸에 밸 것입니다. 또한 FAQ 문서에서 [이 답변 부분을](https://reactjs.org/docs/hooks-faq.html#why-am-i-seeing-stale-props-or-state-inside-my-function) 읽어보세요.
 
 - - - -
 
@@ -87,7 +87,7 @@ function Counter() {
 }
 ```
 
-이게 무슨 뜻일까요? `count` 가 어찌저찌 state의 변화를 관찰하여 자동으로 업데이트 한다는 걸까요? 처음에 리액트를 배우면서 직관적으로 받아들일 때는 유용한 생각일 수 있지만 [정확한 멘탈 모델](https://overreacted.io/ko/react-as-a-ui-runtime/)은 아닙니다.
+이게 무슨 뜻일까요? `count` 가 어찌저찌 state의 변화를 관찰하여 자동으로 업데이트 한다는 걸까요? 처음에 리액트를 배우면서 직관적으로 받아들일 때는 유용한 생각일 수 있지만 [정확한 멘탈 모델](https://overengineered.pro/ko/react-as-a-ui-runtime/)은 아닙니다.
 
 **이 예제에서 `count` 는 그저 숫자입니다.** 마법의 "데이터 바인딩" 이나 "워쳐" 나 "프록시", 혹은 비슷한 그 어떤 것도 아닙니다. 그냥 아래와 같이 단순한 숫자에 불과합니다.
 
@@ -138,7 +138,7 @@ function Counter() {
 
 명심하셔야 할 점은 여느 특정 랜더링 시 그 안에 있는 `count`  상수는 시간이 지난다고 바뀌는 것이 아니라는 것입니다. 컴포넌트가 다시 호출되고, 각각의 랜더링마다 격리된 고유의 `count` 값을 "보는" 것입니다.
 
-(이 과정을 자세히 알고 싶다면, 제가 쓴 다른 글 [UI 런타임으로서의 React](https://overreacted.io/ko/react-as-a-ui-runtime/)를 읽어보세요.)
+(이 과정을 자세히 알고 싶다면, 제가 쓴 다른 글 [UI 런타임으로서의 React](https://overengineered.pro/ko/react-as-a-ui-runtime/)를 읽어보세요.)
 
 ## 모든 랜더링은 고유의 이벤트 핸들러를 가진다
 
@@ -187,7 +187,7 @@ function Counter() {
 
 한번 [직접 해 보세요!](https://codesandbox.io/s/w2wxl3yo0l)
 
-만약에 실행해 본 결과가 잘 납득이 되지 않는다면, 조금 더 실질적인 예를 상상해 보세요. 채팅 앱에서 state에 현재 수신자 ID를 가지고 있는 상태에서 전송 버튼을 누른 것이나 마찬가지입니다. 왜 결과값으로 3이 나왔는지 [이 글이](https://overreacted.io/ko/how-are-function-components-different-from-classes/)  자세히 설명해 줍니다.
+만약에 실행해 본 결과가 잘 납득이 되지 않는다면, 조금 더 실질적인 예를 상상해 보세요. 채팅 앱에서 state에 현재 수신자 ID를 가지고 있는 상태에서 전송 버튼을 누른 것이나 마찬가지입니다. 왜 결과값으로 3이 나왔는지 [이 글이](https://overengineered.pro/ko/how-are-function-components-different-from-classes/)  자세히 설명해 줍니다.
 
 얼럿은 버튼을 클릭할 때의 state를 잡아둘 것입니다.
 
@@ -390,7 +390,7 @@ function Counter() {
 
 **개념적으로, 이펙트는 랜더링 결과의 일부라 생각할 수 있습니다.**
 
-엄격하게 이야기하자면 그렇진 않습니다만(볼품 없는 문법이나 런타임 오버헤드 없이 [훅의 조합을 할 수 있도록](https://overreacted.io/why-do-hooks-rely-on-call-order/) 만들기 위해), 우리가 형성하고 있는 멘탈 모델 속에서 이펙트 함수는 이벤트 핸들러처럼 특정 랜더링에 속하는 함수라고 생각하시면 됩니다.
+엄격하게 이야기하자면 그렇진 않습니다만(볼품 없는 문법이나 런타임 오버헤드 없이 [훅의 조합을 할 수 있도록](https://overengineered.pro/why-do-hooks-rely-on-call-order/) 만들기 위해), 우리가 형성하고 있는 멘탈 모델 속에서 이펙트 함수는 이벤트 핸들러처럼 특정 랜더링에 속하는 함수라고 생각하시면 됩니다.
 
 - - - -
 
@@ -510,7 +510,7 @@ function Example(props) {
 
 **props나 state를 컴포넌트 안에서 일찍 읽어 들였는지 아닌지는 상관 없습니다.** 그 값들은 바뀌지 않을테니까요! 하나의 랜더링 스코프 안에서 props와 state는 변하지 않은 값으로 남아있습니다. (값들을 분해 할당하면 더 확실해집니다.)
 
-물론 때때로 이펙트 안에 정의해둔 콜백에서 사전에 잡아둔 값을 쓰는 것이 아니라 최신의 값을 이용하고 *싶을 때가* 있습니다. 제일 쉬운 방법은 ref를 이용하는 것인데 [링크의 글](https://overreacted.io/how-are-function-components-different-from-classes/) 마지막 단락에 설명되어 있습니다.
+물론 때때로 이펙트 안에 정의해둔 콜백에서 사전에 잡아둔 값을 쓰는 것이 아니라 최신의 값을 이용하고 *싶을 때가* 있습니다. 제일 쉬운 방법은 ref를 이용하는 것인데 [링크의 글](https://overengineered.pro/how-are-function-components-different-from-classes/) 마지막 단락에 설명되어 있습니다.
 
 과거의 랜더링 시점에서 *미래의* props나 state를 조회할 필요가 있을 때 주의하셔야 하는게, 이런 방식은 흐름을 거슬러 올라가는 일입니다. *잘못 되진* 않았지만 (어떤 경우에는 반드시 필요하고요) 패러다임에서 벗어나는게 덜 "깨끗해" 보일 수 있습니다. 아래의 코드는 의도적인 결과인데 하이라이트 쳐둔 코드는 타이밍에 민감하고 다루기 어렵기 때문입니다. 클래스 컴포넌트라면 언제 값을 조회하는지 덜 명확합니다.
 
@@ -619,7 +619,7 @@ function Example() {
 
 ## 라이프사이클이 아니라 동기화
 
-제가 리액트에서 제일 좋아하는 것 중 하나는 처음 랜더링 결과물과 그 업데이트를 통합하여 표현하고 있다는 점입니다. 이로 인해 여러분의 프로그램의 [엔트로피를 줄일 수 있습니다.](https://overreacted.io/the-bug-o-notation/)
+제가 리액트에서 제일 좋아하는 것 중 하나는 처음 랜더링 결과물과 그 업데이트를 통합하여 표현하고 있다는 점입니다. 이로 인해 여러분의 프로그램의 [엔트로피를 줄일 수 있습니다.](https://overengineered.pro/the-bug-o-notation/)
 
 제 컴포넌트가 이렇게 생겼다고 해 보죠.
 
@@ -774,7 +774,7 @@ function SearchResults() {
 }
 ```
 
-*([Hooks FAQ](https://reactjs.org/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies)에서 그 대신 어떻게 해야하는지 설명합니다. 위의 예제는 [아랫부분](https://overreacted.io/a-complete-guide-to-useeffect/#moving-functions-inside-effects)에서 다시 다루겠습니다.)*
+*([Hooks FAQ](https://reactjs.org/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies)에서 그 대신 어떻게 해야하는지 설명합니다. 위의 예제는 [아랫부분](https://overengineered.pro/a-complete-guide-to-useeffect/#moving-functions-inside-effects)에서 다시 다루겠습니다.)*
 
 "하지만 저는 마운트 될 때만 이펙트를 실행하고 싶다고요!" 라고 하실 수 있습니다. 일단 지금은 deps를 지정한다면, **컴포넌트에 있는 *모든* 값 중 그 이펙트에 사용될 값은 *반드시* 거기 있어야 한다**는 것을 기억해 두세요. props, state, 함수들 등 컴포넌트 안에 있는 모든 것 말입니다.
 
@@ -979,7 +979,7 @@ useEffect(() => {
 
 저는 이런 경우를 "잘못된 의존관계" 라고 생각하는 것을 좋아합니다. 네, `count` 는 우리가 `setCount(count + 1)` 이라고 썼기 때문에 이펙트 안에서 필요한 의존성이었습니다. 하지만 진짜로 우리는 `count` 를 `count + 1` 로 변환하여 리액트에게 "돌려주기 위해" 원했을 뿐입니다. 하지만 리액트는 현재의 `count` 를 *이미 알고 있습니다.* **우리가 리액트에게 알려줘야 하는 것은 지금 값이 뭐든 간에 상태 값을 하나 더하라는 것입니다.**
 
-그게 정확히 `setCount(c => c +1)` 이 의도하는 것입니다. 리액트에게 상태가 어떻게 바뀌어야 하는지 "지침을 보내는 것" 이라고 생각할 수 있습니다. 이 "업데이터 형태" 또한 다른 케이스에서 사용할 수 있습니다. 예를 들어 [여러 개의 업데이트를 묶어서 처리할 때처럼요.](https://overreacted.io/react-as-a-ui-runtime/#batching)
+그게 정확히 `setCount(c => c +1)` 이 의도하는 것입니다. 리액트에게 상태가 어떻게 바뀌어야 하는지 "지침을 보내는 것" 이라고 생각할 수 있습니다. 이 "업데이터 형태" 또한 다른 케이스에서 사용할 수 있습니다. 예를 들어 [여러 개의 업데이트를 묶어서 처리할 때처럼요.](https://overengineered.pro/react-as-a-ui-runtime/#batching)
 
 **의존성을 제거하지 않고도 실제로 *문제를 해결했다*는 것을 알아두셔야 합니다. 꼼수를 쓰지 않았습니다. 이펙트는 더 이상 랜더링 스코프에서 `count` 값을 읽어 들이지 않습니다.
 
@@ -1538,7 +1538,7 @@ function ColorPicker() {
 
 **그렇다고 `useCallback` 을 어디든지 사용하는 것은 꽤 투박한 방법이라고 강조하고 싶습니다.** `useCallback` 은 꽤 좋은 돌파구이며 함수가 전달되어 자손 컴포넌트의 이펙트 안에서 호출되는 경우 유용합니다. 아니면 자손 컴포넌트의 메모이제이션이 깨지지 않도록 방지할 때도 쓰입니다. 하지만 훅 자체가 [콜백을 내려보내는 것을 피하는](https://reactjs.org/docs/hooks-faq.html#how-to-avoid-passing-callbacks-down) 더 좋은 방법을 함께 제공합니다.
 
-위의 예제라면 저는 `fetchData` 를 이펙트 안에 두거나(커스텀 훅으로 추상화될 수도 있고요) 최상위 레벨로 만들어 import 할 것입니다. 저는 이펙트를 최대한 단순하게 만들고 싶고 그 안에 콜백을 두는 것은 단순하게 만드는데 별로 도움이 되지 않습니다. ("만약에 어떤 `props.onComplete` 콜백이 요청이 보내지고 있을 때 실행된다면?") [클래스 컴포넌트의 동작을 흉내낼순 있지만](https://overreacted.io/a-complete-guide-to-useeffect/#swimming-against-the-tide) 경쟁 상태(race condition)를 해결할 수는 없습니다.
+위의 예제라면 저는 `fetchData` 를 이펙트 안에 두거나(커스텀 훅으로 추상화될 수도 있고요) 최상위 레벨로 만들어 import 할 것입니다. 저는 이펙트를 최대한 단순하게 만들고 싶고 그 안에 콜백을 두는 것은 단순하게 만드는데 별로 도움이 되지 않습니다. ("만약에 어떤 `props.onComplete` 콜백이 요청이 보내지고 있을 때 실행된다면?") [클래스 컴포넌트의 동작을 흉내낼순 있지만](https://overengineered.pro/a-complete-guide-to-useeffect/#swimming-against-the-tide) 경쟁 상태(race condition)를 해결할 수는 없습니다.
 
 ## 경쟁 상태에 대해
 

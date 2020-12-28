@@ -128,7 +128,7 @@ if (false) {
 
 최근 2년 사이에 상황은 크게 좋아졌다. 예를 들어, 웹팩은 `process.env.NODE_ENV`를 수동으로 구성해 대체하는 대신 `mode` 옵션을 추가했다. React DevTools 또한 사이트에 빨간 아이콘을 나타내 쉽게 개발 모드 상태인 것을 발견하고 [report](https://mobile.twitter.com/BestBuySupport/status/1027195363713736704) 하도록 했다. 
 
-![image1.png](https://overreacted.io/static/ca1c0db064f73cc5c8e21ad605eaba26/d9514/devmode.png)
+![image1.png](https://overengineered.pro/static/ca1c0db064f73cc5c8e21ad605eaba26/d9514/devmode.png)
 
 Create React App나 Next/Nuxt, Vue CLI, Gatsby 같은 프로젝트들 또한 두 개의 커맨드(예를 들어, `npm start`와 `npm run build`같이)를 제공해 개발 모드와 배포 모드의 빌드를 다르게 가져가 더 쉽게 적용할 수 있도록 했다. 일반적으로, 배포 모드의 빌드 결과만 배포될 수 있기 때문에 더는 실수를 저지르기 힘들게 되었다.
 

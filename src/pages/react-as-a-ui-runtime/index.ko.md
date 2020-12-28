@@ -1082,7 +1082,7 @@ component Example(props) {
 
 **물론 `use`는 구문이 아닙니다.** (이득보단 문제만 만들 것입니다.)
 
-React는 모든 훅 호출이 컴포넌트의 최상위 수준에서 무조건적으로 일어난다고 가정합니다. [훅의 규칙](https://reactjs.org/docs/hooks-rules.html)은 [린터 플러그인](https://www.npmjs.com/package/eslint-plugin-react-hooks)으로 강제할 수 있습니다. 이 설계에 대해서는 뜨거운 논쟁이 있었지만 사람들을 혼란스럽게 하진 않았습니다. 또한 일반적인 대안들이 왜 [작동하지 않는지](https://overreacted.io/why-do-hooks-rely-on-call-order/)에 대해서도 작성했습니다.
+React는 모든 훅 호출이 컴포넌트의 최상위 수준에서 무조건적으로 일어난다고 가정합니다. [훅의 규칙](https://reactjs.org/docs/hooks-rules.html)은 [린터 플러그인](https://www.npmjs.com/package/eslint-plugin-react-hooks)으로 강제할 수 있습니다. 이 설계에 대해서는 뜨거운 논쟁이 있었지만 사람들을 혼란스럽게 하진 않았습니다. 또한 일반적인 대안들이 왜 [작동하지 않는지](https://overengineered.pro/why-do-hooks-rely-on-call-order/)에 대해서도 작성했습니다.
 
 내부적으로 훅은 [연결 리스트](https://dev.to/aspittel/thank-u-next-an-introduction-to-linked-lists-4pph)로 구현됩니다. `useState`를 호출할 때 다음 아이템으로 포인터를 옮깁니다. 컴포넌트의 [호출 트리 프레임](#호출-트리)을 나갈 때 리스트 결과를 다음 렌더링까지 저장합니다.
 

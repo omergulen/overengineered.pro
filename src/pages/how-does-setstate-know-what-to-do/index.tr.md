@@ -37,7 +37,7 @@ DOM’u güncellemek React DOM’un sorumluluğu gibi görünüyor. Ama biz Reac
 
 Peki `React.Component` içerisindeki `setState()` nasıl DOM’u güncelliyor?
 
-**Önemli Not: React konusunda etkin olabilmek için, bu blog sitesindeki [birçok](https://overreacted.io/why-do-react-elements-have-typeof-property/) [diğer](https://overreacted.io/how-does-react-tell-a-class-from-a-function/) [gönderi](https://overreacted.io/why-do-we-write-super-props/) gibi, bu gönderide anlatılanları da bilmek zorunda değilsiniz. Bu gönderi perde arkasında işlerin nasıl yürüdüğünü görmek isteyenler için yazıldı. Tamamen opsiyonel.**
+**Önemli Not: React konusunda etkin olabilmek için, bu blog sitesindeki [birçok](https://overengineered.pro/why-do-react-elements-have-typeof-property/) [diğer](https://overengineered.pro/how-does-react-tell-a-class-from-a-function/) [gönderi](https://overengineered.pro/why-do-we-write-super-props/) gibi, bu gönderide anlatılanları da bilmek zorunda değilsiniz. Bu gönderi perde arkasında işlerin nasıl yürüdüğünü görmek isteyenler için yazıldı. Tamamen opsiyonel.**
 
 ---
 

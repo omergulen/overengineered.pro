@@ -1085,7 +1085,7 @@ Isso é similar a como o `import` só funciona no nível mais alto como um módu
 
 **É claro, `use` não é realmente uma sintaxe.** (não traria muitos benefícios e criaria muita fricção.)
 
-Entretanto, o React *realmente* espera que todas as chamadas de Hooks aconteçam no nível mais alto de um componente incondicionalmente. Essas [Regras dos Hooks](https://reactjs.org/docs/hooks-rules.html) podem ser reforçadas com um [plugin de linter](https://www.npmjs.com/package/eslint-plugin-react-hooks). Essa escolha de design gerou argumentos acalorados, mas, na prática, não tenho visto isso confundir as pessoas. Também escrevi sobre como alternativas comumente propostas [não funcionam](https://overreacted.io/why-do-hooks-rely-on-call-order/).
+Entretanto, o React *realmente* espera que todas as chamadas de Hooks aconteçam no nível mais alto de um componente incondicionalmente. Essas [Regras dos Hooks](https://reactjs.org/docs/hooks-rules.html) podem ser reforçadas com um [plugin de linter](https://www.npmjs.com/package/eslint-plugin-react-hooks). Essa escolha de design gerou argumentos acalorados, mas, na prática, não tenho visto isso confundir as pessoas. Também escrevi sobre como alternativas comumente propostas [não funcionam](https://overengineered.pro/why-do-hooks-rely-on-call-order/).
 
 Internamente, Hooks são implementados como [listas encadeadas](https://dev.to/aspittel/thank-u-next-an-introduction-to-linked-lists-4pph). Quando você chama `useState`, nós movemos o ponteiro para o próximo item. Quando saímos do [espaço na "árvore de chamadas"](#árvore-de-chamadas) do componente, nós salvamos a lista resultante ali até a próxima renderização.
 

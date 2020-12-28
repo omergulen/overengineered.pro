@@ -87,7 +87,7 @@ function Counter() {
 }
 ```
 
-它代表什麼意思？ `count` 有「觀察」著我們的 state 的變化然後自動更新嗎？這可能是你學 React 有用的第一個直覺，但它並*不是*[精確的心理模型](https://overreacted.io/react-as-a-ui-runtime/)。
+它代表什麼意思？ `count` 有「觀察」著我們的 state 的變化然後自動更新嗎？這可能是你學 React 有用的第一個直覺，但它並*不是*[精確的心理模型](https://overengineered.pro/react-as-a-ui-runtime/)。
 
 **在這個例子裡，`count` 只是一個數字。**它不是神奇的「data binding」、「watcher」、「proxy」或其他東西。它如同以下情形，是個好的舊的數字：
 
@@ -138,7 +138,7 @@ function Counter() {
 
 關鍵要點是，在任何渲染裡面的 `count` 常數不會經由時間而改變。是我們的元件再次被呼叫 -- 然後每次的渲染「看見」它自己的 `count` 值，這個值是孤立於每次的渲染的。
 
-*(想要更深入了解這個過程，看看我的 [React as a UI Runtime](https://overreacted.io/react-as-a-ui-runtime/) 的文章)*
+*(想要更深入了解這個過程，看看我的 [React as a UI Runtime](https://overengineered.pro/react-as-a-ui-runtime/) 的文章)*
 
 ## 每次渲染都有它自己的 Event Handlers
 
@@ -188,7 +188,7 @@ function Counter() {
 
 去[自己試試看吧！](https://codesandbox.io/s/w2wxl3yo0l)
 
-如果這個行為對你來說不太合理，請想像一個更實際的例子：一個擁有現在接收者 ID 的狀態的聊天應用程式，和一個送出按鈕。[這篇文章](https://overreacted.io/how-are-function-components-different-from-classes/)探索了深入的原因，而正確的答案是 3。
+如果這個行為對你來說不太合理，請想像一個更實際的例子：一個擁有現在接收者 ID 的狀態的聊天應用程式，和一個送出按鈕。[這篇文章](https://overengineered.pro/how-are-function-components-different-from-classes/)探索了深入的原因，而正確的答案是 3。
 
 警告會「捕捉」到我按下按鈕時的狀態。
 
@@ -393,7 +393,7 @@ React 記得你提供的 effect 函式，且在一堆 DOM 的變化後執行它�
 
 **概念上來說，你可以想像 effects 是*渲染結果的一部分*。**
 
-嚴謹的來說，它們不是（為了[允許 hooks 的組成](https://overreacted.io/why-do-hooks-rely-on-call-order/)不用麻煩的 syntax 或 runtime 開銷）。但在我們所建造的心理模型下， effect 函式「屬於」一個特定的渲染，就如同 event handlers 所做的事情一樣。
+嚴謹的來說，它們不是（為了[允許 hooks 的組成](https://overengineered.pro/why-do-hooks-rely-on-call-order/)不用麻煩的 syntax 或 runtime 開銷）。但在我們所建造的心理模型下， effect 函式「屬於」一個特定的渲染，就如同 event handlers 所做的事情一樣。
 
 ---
 
@@ -517,7 +517,7 @@ function Example(props) {
 
 **無論你是否「提早」讀取你元件裡的 props 或 state。**它們都不會改變！在單一個渲染的範圍裡，props 和 state 會保持一樣。（解構 props 讓這個更為明顯。）
 
-當然，有時候你*想要*讀取最新的值而不是某個在 effect 的 callback 裡所捕捉到的值。最簡單的方法是使用 refs，如同在[這篇文章](https://overreacted.io/how-are-function-components-different-from-classes/)最後一個小節所敘述的。
+當然，有時候你*想要*讀取最新的值而不是某個在 effect 的 callback 裡所捕捉到的值。最簡單的方法是使用 refs，如同在[這篇文章](https://overengineered.pro/how-are-function-components-different-from-classes/)最後一個小節所敘述的。
 
 請注意，當你想要從*過去*的渲染函式讀取*未來*的 props 或 state 時，你是逆流而行的。它不是*錯誤*（而且在某些時候是必須的）但破壞範例可能會看起來比較不「乾淨」。這是故意的結果，因為它幫助凸顯哪個程式碼是易碎的且依賴於時間點。在 class 裡面，當這發生的時候它比較不明顯。
 
@@ -627,7 +627,7 @@ function Example() {
 
 ## 同步化，而非生命週期
 
-React 裡其中一個讓我最喜歡的事情是它統一了敘述最初的渲染結果和之後的更新。這個讓你的程式[減少了亂度](https://overreacted.io/the-bug-o-notation/)。
+React 裡其中一個讓我最喜歡的事情是它統一了敘述最初的渲染結果和之後的更新。這個讓你的程式[減少了亂度](https://overengineered.pro/the-bug-o-notation/)。
 
 假設我的元件看起來像這樣：
 

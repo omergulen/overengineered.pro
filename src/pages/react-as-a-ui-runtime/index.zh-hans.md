@@ -1079,7 +1079,7 @@ component Example(props) {
 
 **当然，`use` 并不是真正的语法。** （它不会带来很多好处，并且会带来很多摩擦。）
 
-然而，React 的确期望所有的 Hooks 调用只发生在组件的顶部并且不在条件语句中。这些 Hooks 的[规则](https://reactjs.org/docs/hooks-rules.html)能够被 [linter plugin](https://www.npmjs.com/package/eslint-plugin-react-hooks) 所规范。有很多关于这种设计选择的激烈争论，但在实践中我并没有看到它让人困惑。我还写了关于为什么通常提出的替代方案[不起作用](https://overreacted.io/why-do-hooks-rely-on-call-order/)的文章。
+然而，React 的确期望所有的 Hooks 调用只发生在组件的顶部并且不在条件语句中。这些 Hooks 的[规则](https://reactjs.org/docs/hooks-rules.html)能够被 [linter plugin](https://www.npmjs.com/package/eslint-plugin-react-hooks) 所规范。有很多关于这种设计选择的激烈争论，但在实践中我并没有看到它让人困惑。我还写了关于为什么通常提出的替代方案[不起作用](https://overengineered.pro/why-do-hooks-rely-on-call-order/)的文章。
 
 Hooks 的内部实现其实是[链表](https://dev.to/aspittel/thank-u-next-an-introduction-to-linked-lists-4pph) 。当你调用 `useState` 的时候，我们将指针移到下一项。当我们退出组件的[“调用树”帧](#调用树)时，会缓存该结果的列表直到下次渲染开始。
 
