@@ -44,11 +44,11 @@ class Translations extends React.Component {
                     <Link to={languageLink('en')}>English</Link>
                   )}
                   {' • '}
-                  {'ru' === lang ? (
-                    <b>Русский (авторский перевод)</b>
+                  {'tr' === lang ? (
+                    <b>Turkce (Yazar'in cevirisi)</b>
                   ) : (
                     <Link to={languageLink('ru')}>
-                      Русский (авторский перевод)
+                      Turkce (Yazar'in cevirisi)
                     </Link>
                   )}
                   <br />
@@ -72,7 +72,7 @@ class Translations extends React.Component {
             <>
               <br />
               <br />
-              {lang !== 'ru' && (
+              {lang !== 'tr' && (
                 <>
                   <Link to={languageLink('en')}>Read the original</Link>
                   {' • '}
