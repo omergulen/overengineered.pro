@@ -1,7 +1,7 @@
 {
   "name": "overengineered",
   "private": true,
-  "engines": {"node": "14.x"},
+  "engines": {"node": "12.x"},
   "description": "Overengineered",
   "version": "1.0.0",
   "author": "Omer Gulen <omrglen@gmail.com>",
