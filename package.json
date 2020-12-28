@@ -1,12 +1,12 @@
 {
-  "name": "overreacted",
+  "name": "overengineered",
   "private": true,
-  "engines": {"node": "12.x"},
-  "description": "Overreacted",
+  "engines": {"node": "14.x"},
+  "description": "Overengineered",
   "version": "1.0.0",
-  "author": "Dan Abramov <dan.abramov@me.com>",
+  "author": "Omer Gulen <omrglen@gmail.com>",
   "bugs": {
-    "url": "https://github.com/gaearon/overreacted.io/issues"
+    "url": "https://github.com/omergulen/overengineered/issues"
   },
   "dependencies": {
     "gatsby": "^2.0.76",

@@ -1,5 +1,6 @@
+/* TODO :: Find nice color & name */
 body {
-  --pink: rgb(255, 167, 196);
+  --pink: rgb(36, 167, 167);
   background-color: var(--bg);
 }
 
